@@ -1,0 +1,28 @@
+﻿@using SenalesMioelectricas.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pacientes</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Apellido Paterno</td>
+            <td>Apellido Materno</td>
+            <td>Sexo</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Apellido_Paterno</td>
+            <td>@item.Apellido_Materno</td>
+            <td>@item.Sexo</td>
+        </tr>
+        }
+    </tbody>
+</table>
