@@ -1,28 +1,69 @@
-﻿@using SenalesMioelectricas.Models;
+﻿@model IEnumerable<SenalesMioelectricas.Models.Paciente>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Pacientes</h2>
-<table class="table table-bordered">
-    <thead>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <a href="@Url.Action("Create", "Students")"><i class="btn btn-success btn-sm">Create</i></a>
+    <br />
+    <br />
+
+    <table class="table">
         <tr>
-            <td>Nombre</td>
-            <td>Apellido Paterno</td>
-            <td>Apellido Materno</td>
-            <td>Sexo</td>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Materno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
+
         @foreach (var item in Model)
         {
-        <tr>
-            <td>@item.Nombre</td>
-            <td>@item.Apellido_Paterno</td>
-            <td>@item.Apellido_Materno</td>
-            <td>@item.Sexo</td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido_Materno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Students", new { id = item.ID_Paciente })">
+                <i class="fa fa-edit btn btn-info btn-sm"></i>
+            </a> |
+            <a href="@Url.Action("Details", "Students", new { id = item.ID_Paciente })">
+                <i class="btn btn-warning btn-sm">Details</i>
+            </a> |
+            <a href="@Url.Action("Delete", "Students", new { id = item.ID_Paciente })">
+                <i class="btn btn-danger btn-sm">Delete</i>
+            </a>
+        </td>
+    </tr>
         }
-    </tbody>
-</table>
+
+    </table>
+</body>
+</html>
+
