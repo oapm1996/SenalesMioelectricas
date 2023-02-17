@@ -4475,6 +4475,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Paciente\Details.cshtml" />
+    <Content Include="Views\Paciente\Edit.cshtml" />
+    <Content Include="Views\Paciente\Delete.cshtml" />
+    <Content Include="Views\Paciente\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

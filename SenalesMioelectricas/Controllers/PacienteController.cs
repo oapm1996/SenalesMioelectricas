@@ -47,7 +47,7 @@ namespace SenalesMioelectricas.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "StudentId,StudentName,Marks")] Paciente paciente)
+        public async Task<ActionResult> Create([Bind(Include = "ID_Paciente,Nombre,Apellido_Paterno,Apellido_Materno,Sexo")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
@@ -74,12 +74,12 @@ namespace SenalesMioelectricas.Controllers
             return View(paciente);
         }
 
-        // POST: Students/Edit/5
+        // POST: Paciente/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "StudentId,StudentName,Marks")] Paciente paciente)
+        public async Task<ActionResult> Edit([Bind(Include = "ID_Paciente,Nombre,Apellido_Paterno,Apellido_Materno,Sexo")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {

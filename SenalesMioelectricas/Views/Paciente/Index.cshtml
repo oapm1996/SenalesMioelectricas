@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <a href="@Url.Action("Create", "Students")"><i class="btn btn-success btn-sm">Create</i></a>
+    <a href="@Url.Action("Create", "Paciente")"><i class="btn btn-success btn-sm">Agregar</i></a>
     <br />
     <br />
 
@@ -30,6 +30,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                @Html.Label("Opciones")
             </th>
             <th></th>
         </tr>
@@ -50,13 +53,13 @@
             @Html.DisplayFor(modelItem => item.Sexo)
         </td>
         <td>
-            <a href="@Url.Action("Edit", "Students", new { id = item.ID_Paciente })">
+            <a href="@Url.Action("Edit", "Paciente", new { id = item.ID_Paciente })">
                 <i class="fa fa-edit btn btn-info btn-sm"></i>
             </a> |
-            <a href="@Url.Action("Details", "Students", new { id = item.ID_Paciente })">
+            <a href="@Url.Action("Details", "Paciente", new { id = item.ID_Paciente })">
                 <i class="btn btn-warning btn-sm">Details</i>
             </a> |
-            <a href="@Url.Action("Delete", "Students", new { id = item.ID_Paciente })">
+            <a href="@Url.Action("Delete", "Paciente", new { id = item.ID_Paciente })">
                 <i class="btn btn-danger btn-sm">Delete</i>
             </a>
         </td>
